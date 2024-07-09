@@ -1,5 +1,7 @@
+/* 
+    style overrides for game pages
+ */
 
-/* style overrides */
 body {
     grid-template-rows: 4em auto 4em;
     grid-template-columns: 10em auto;
