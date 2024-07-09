@@ -19,10 +19,28 @@ body {
     text-align: center;
     display: block;
 }
-.sectioned_content_inner:not(.game_canvas_div) {
-    margin: 5px;
-}
 #game_canvas {
     background-color: #131d3a;
     border: 2px solid #7a90ae;
+    box-shadow: 7px 7px 4px #131e2f;
+}
+
+.sectioned_content_inner:not(.game_canvas_div) {
+    margin: 5px;
+}
+
+/* .credits_table_heading {
+} */
+.credits_table_cell{
+    padding: 5px;
+    margin: 5px;
+    border-bottom: 2px solid #7a90ae;
+    /* text-align: center; */
+}
+.credits_table_cell_name{
+    /* border-right: 2px solid #7a90ae; */
+    text-align: left;
+}
+.credits_table_cell_institute{
+    text-align: right;
 }
