@@ -1,0 +1,26 @@
+
+/* style overrides */
+body {
+    grid-template-rows: 4em auto 4em;
+    grid-template-columns: 10em auto;
+}
+.game_canvas_outter_div {
+    /* background-color: #0c2547;
+    margin: 5px;
+    padding: 5px; */
+    padding: 5px;
+    margin: 5px;
+    border-left: 2px solid #c1d4ed;
+}
+.game_canvas_div {
+    margin: 5px;
+    text-align: center;
+    display: block;
+}
+.sectioned_content_inner:not(.game_canvas_div) {
+    margin: 5px;
+}
+#game_canvas {
+    background-color: #131d3a;
+    border: 2px solid #7a90ae;
+}
