@@ -1,3 +1,3 @@
-# [Gelatinous-games.github.io](gelatinous-games.github.io)
+# [Gelatinous-games.github.io](https://gelatinous.games/)
 
 * this is the repo
