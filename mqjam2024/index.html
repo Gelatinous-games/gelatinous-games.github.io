@@ -8,9 +8,72 @@
         <link rel="stylesheet" href="/styles/globalStyle.css">
         <link rel="stylesheet" href="/styles/gamePageStyle.css">
     </head>
-    <body>
+    <body id="bodyElem">
+        <!-- <script src="/scripts/gamePageScripts.js"></script> -->
+        <script>
+            var HIDING_PAGE_ELEMENTS = false;
+
+            // useful page
+            // https://www.toptal.com/developers/keycode
+            function testForMenuChange(keyEventIn) {
+                // p for hiding
+                if(keyEventIn.code == "KeyU"){
+                    // check currently hiding
+                    if(HIDING_PAGE_ELEMENTS){
+                        unhidePageElements();
+                    }
+                    else {
+                        hidePageElements();
+                    }
+                }
+                // pressing escape should unhide
+                if(keyEventIn.code == "Escape"){
+                    unhidePageElements();
+                }
+            }
+            function unhidePageElements(){
+                var bodyElem = document.getElementById("bodyElem");
+                var navElem = document.getElementById("navElem");
+                var headerElem = document.getElementById("headerElem");
+                var footerElem = document.getElementById("footerElem");
+                var sectionElemsList = document.getElementsByClassName("sectioned_content_outter_nongame_containing");
+
+                bodyElem.classList.remove("body_hiding_style");
+                navElem.classList.remove("nav_hidden");
+                headerElem.classList.remove("header_hidden");
+                footerElem.classList.remove("footer_hidden");
+
+                for (let index = 0; index < sectionElemsList.length; index++) {
+                    sectionElemsList[index].classList.remove("section_hidden");
+                }
+
+                HIDING_PAGE_ELEMENTS = false;
+            }
+            function hidePageElements(){
+                var bodyElem = document.getElementById("bodyElem");
+                var navElem = document.getElementById("navElem");
+                var headerElem = document.getElementById("headerElem");
+                var footerElem = document.getElementById("footerElem");
+                var sectionElemsList = document.getElementsByClassName("sectioned_content_outter_nongame_containing");
+
+                bodyElem.classList.add("body_hiding_style");
+                navElem.classList.add("nav_hidden");
+                headerElem.classList.add("header_hidden");
+                footerElem.classList.add("footer_hidden");
+
+                for (let index = 0; index < sectionElemsList.length; index++) {
+                    sectionElemsList[index].classList.add("section_hidden");
+                }
+
+                HIDING_PAGE_ELEMENTS = true;
+            }
+
+            // keyup bc keydown is spooky
+            document.addEventListener("keyup", testForMenuChange);
+
+        </script>
         <!-- header stuff -->
-        <header>
+        <header id="headerElem">
             <div id="top_header_logo">
                 <!--  -->
                 <img src="" alt="[main page logo]" />
@@ -22,7 +85,7 @@
         </header>
 
         <!-- nav section -->
-        <nav class="menu">
+        <nav id="navElem" class="menu">
             <!--  -->
             <div class="nav_link"><a href="/" class="nav_link_anchor">SITE HOME</a></div>
             <div class="nav_link"><a href="/mqjam2024/" class="nav_link_anchor">LIGHT SHIFT<br>MQJAM 2024</a></div>
@@ -52,20 +115,61 @@
                     <script src="gamer.js"></script>
                 </div>
             </section>
-            <section class="sectioned_content_outter">
+            <section class="sectioned_content_outter sectioned_content_outter_nongame_containing">
                 <div class="sectioned_content_inner">
                     <!--  -->
                     <img src="" alt="[sectional image]" class="sectioned_content_thumbnail" />
                     <h3 class="sectioned_content_heading">Controls</h3>
                     <div class="sectioned_content_body">
-                        lorem ipsum
+                        <table>
+                            <tr>
+                                <td align="right">key</td>
+                                <td></td>
+                                <td>use</td>
+                            </tr>
+                            <tr>
+                                <td align="right"><code>[w]</code></td>
+                                <td>==></td>
+                                <td>{ forward }</td>
+                            </tr>
+                            <tr>
+                                <td align="right"><code>[s]</code></td>
+                                <td>==></td>
+                                <td>{ back }</td>
+                            </tr>
+                            <tr>
+                                <td align="right"><code>[a]</code></td>
+                                <td>==></td>
+                                <td>{ anticlockwise }</td>
+                            </tr>
+                            <tr>
+                                <td align="right"><code>[d]</code></td>
+                                <td>==></td>
+                                <td>{ clockwise }</td>
+                            </tr>
+                            <tr>
+                                <td align="right"><code>[space]</code></td>
+                                <td>==></td>
+                                <td>{ to start the game }</td>
+                            </tr>
+                            <tr>
+                                <td align="right"><code>[u]</code></td>
+                                <td>==></td>
+                                <td>{ show/hide the webpage menus }</td>
+                            </tr>
+                            <tr>
+                                <td align="right"><code>[escape]</code></td>
+                                <td>==></td>
+                                <td>{ show the webpage menus }</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </section>
         </main>
 
         <!-- footer -->
-        <footer>
+        <footer id="footerElem">
             <section class="footer_section">
                 <a href="https://github.com/Gelatinous-games/mqjam2024"><img src="https://img.shields.io/badge/Repo-100000?style=for-the-badge&logo=github&logoColor=white&label=Github" alt="github badge" /></a>
             </section>
