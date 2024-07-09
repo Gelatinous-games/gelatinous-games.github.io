@@ -4,6 +4,8 @@
 * {
     font-family: monospace;
     color: #ffb570;
+}
+html {
     background: #0b2c5b;
 }
 
@@ -112,4 +114,9 @@ footer{
     grid-column: 1 / span 4;
     border-top: 2px solid #c1d4ed;
     text-align: center;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.footer_section {
+    margin: 5px;
 }
