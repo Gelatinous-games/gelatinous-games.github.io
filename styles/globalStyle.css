@@ -85,6 +85,7 @@ main {
 }
 .sectioned_content_outter:not(.section_hidden) {
     display: block;
+    min-width:fit-content;
     background-color: #0c2547;
     margin: 7px;
     padding: 5px;

@@ -16,6 +16,8 @@ body {
 }
 .game_canvas_div {
     margin: 5px;
+    padding: 5px;
+    min-width:fit-content;
     text-align: center;
     display: block;
 }
@@ -27,6 +29,15 @@ body {
 
 .sectioned_content_inner:not(.game_canvas_div) {
     margin: 5px;
+    padding: 5px;
+    min-width:fit-content;
+}
+.sectioned_content_body{
+    margin: 5px;
+    padding: 5px;
+    min-width:fit-content;
+    /* align-items: flex-start flex-end; */
+    /* align-content: flex-start flex-end; */
 }
 
 /* .credits_table_heading {
